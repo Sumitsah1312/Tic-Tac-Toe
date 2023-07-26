@@ -8,7 +8,7 @@ nav{
     color: white;
     justify-content: center;
     height: 60px;
-    font-size: large;
+    font-size: 3rem;
     display: flex;
     align-items: center;
     right: 10px;
@@ -78,6 +78,7 @@ nav{
     font-size: larger;
 }
 
+
 @media(max-width:800px)
 {
     .gamecontainer{
@@ -100,5 +101,8 @@ nav{
     #reset{
         padding: 3vh;
         left: 30%;
+    }
+    nav{
+        font-size: 2rem;
     }
 }
