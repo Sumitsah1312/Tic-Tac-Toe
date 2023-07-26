@@ -19,6 +19,7 @@ nav{
     display: flex;
     justify-content: center;
     margin-top: 50px;
+    position: relative;
 }
 
 .container{
@@ -78,6 +79,15 @@ nav{
     font-size: larger;
 }
 
+.line{
+    background-color: black;
+    height: 5px;
+    width: 0vw;
+    position: absolute;
+    background-color: blueviolet;
+    transition: width 1s ease-in;
+
+}
 
 @media(max-width:800px)
 {
@@ -104,5 +114,8 @@ nav{
     }
     nav{
         font-size: 2rem;
+    }
+    .line{
+        width: 60vw;
     }
 }

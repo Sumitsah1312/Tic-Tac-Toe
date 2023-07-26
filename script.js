@@ -16,14 +16,14 @@ const changeTurn=()=>{
 const checkWin=()=>{
     let boxtext=document.getElementsByClassName('boxtext');
     let wins=[
-        [0,1,2],
-        [3,4,5],
-        [6,7,8],
-        [0,3,6],
-        [1,4,7],
-        [2,5,8],
-        [0,4,8],
-        [6,4,2],
+        [0,1,2,-23,5,0],
+        [3,4,5,-23,15,0],
+        [6,7,8,-23,25,0],
+        [0,3,6,-33,15,90],
+        [1,4,7,-23,15,90],
+        [2,5,8,-13,15,90],
+        [0,4,8,-23,15,45],
+        [6,4,2,-23,15,-45],
     ]
     wins.forEach(e=>{
         if((boxtext[e[0]].innerText!==""&&boxtext[e[1]].innerText!==""&&boxtext[e[2]].innerText!=="")&&(boxtext[e[0]].innerText===boxtext[e[1]].innerText)&&(boxtext[e[1]].innerText===boxtext[e[2]].innerText))
@@ -33,6 +33,8 @@ const checkWin=()=>{
             gameover=true;
             audiogameover.play();
             document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width='196px';
+            document.querySelector(".line").style.transform=`translate(${e[3]}vw,${e[4]}vw) rotate(${e[5]}deg)`;
+            document.querySelector(".line").style.width = "30vw";
             // document.getElementsByClassName('yay')[0].style.width='50px';
             // document.getElementsByClassName("imgbox").style.display=
         }
@@ -66,6 +68,7 @@ reset.addEventListener('click',()=>{
     })
     turn="X";
     gameover=false;
+    document.querySelector(".line").style.width="0vw";
     document.getElementsByClassName("Info")[0].innerText="Turn For "+turn;
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width='0px';
 })
