@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body{
+    background-color: rgb(204, 224, 224);
+}
+
 nav{
     background-color: rgb(72, 215, 222);
     color: white;
@@ -13,7 +17,9 @@ nav{
     align-items: center;
     right: 10px;
 }
-
+.topic{
+    font-family: cursive;
+}
 .gamecontainer{
     /* background-color: aqua; */
     display: flex;
@@ -26,6 +32,14 @@ nav{
     display: grid;
     grid-template-columns: repeat(3,10vw);
     grid-template-rows: repeat(3,10vw);
+}
+.Info{
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: larger;
+    font-family: cursive;
 }
 .box{
     border: solid darkcyan 2px;
@@ -65,7 +79,7 @@ nav{
 #reset{
     margin: 12px;
     position: relative;
-    left: 60%;
+    left: 30%;
     padding: 5vh;
     border-radius: 30%;
     background-color: aquamarine;
@@ -80,12 +94,12 @@ nav{
 }
 
 .line{
-    background-color: black;
+  
     height: 5px;
     width: 0vw;
     position: absolute;
-    background-color: blueviolet;
-    transition: width 1s ease-in;
+    /* background-color: blueviolet; */
+    /* transition: width 1s ease-in; */
 
 }
 

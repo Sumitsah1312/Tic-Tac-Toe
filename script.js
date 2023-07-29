@@ -2,6 +2,7 @@ console.log("Welcome to Tic Tac Toe");
 let music=new Audio("music.mp3");
 let audioturn=new Audio("ting.mp3");
 let audiogameover=new Audio("gameover.mp3");
+let reset=document.querySelector('.reset');
 let turn="X";
 let gameover=false;
 //Function to change turn
@@ -35,10 +36,19 @@ const checkWin=()=>{
             document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width='196px';
             document.querySelector(".line").style.transform=`translate(${e[3]}vw,${e[4]}vw) rotate(${e[5]}deg)`;
             document.querySelector(".line").style.width = "30vw";
+            
+            function myreset(){
+
+                reset.click();
+            }
+            setTimeout(myreset,3000);
+
+            
             // document.getElementsByClassName('yay')[0].style.width='50px';
             // document.getElementsByClassName("imgbox").style.display=
         }
     })
+
 }
 
 //Game Logic
@@ -50,11 +60,14 @@ Array.from(boxes).forEach(element=>{
         {
             boxtext.innerText=turn;
             turn = changeTurn();
+
             console.log(turn);
             audioturn.play();
             checkWin();
+
             if(gameover===false)
             document.getElementsByClassName("Info")[0].innerText="Turn For "+turn;
+
         }
      })
 })
